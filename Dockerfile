@@ -1,7 +1,7 @@
 # Example usage:
 #
 # cp ~/.ssh/authorized_keys ./
-# docker build -t forward ./
+# docker build -t forward docker build -t forward https://raw.githubusercontent.com/vd2org/ssh-forward/master/Dockerfile
 # docker run --network NETWORK --name forward -d -p 33322:22 forward
 #
 # On client:
