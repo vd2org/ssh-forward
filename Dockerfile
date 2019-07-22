@@ -31,9 +31,9 @@ RUN apk update && \
     mkdir -p /home/forward/.ssh && \
     apk del alpine-baselayout alpine-keys musl-utils libc-utils musl && \
     mkdir /var/empty && \
-    apk del apk-tools busybox && \
     rm -rf /var/cache/apk/* && \
-    rm -rf /usr/bin/ssh-keygen
+    rm -rf /usr/bin/ssh-keygen && \
+    apk del apk-tools busybox
 
 ADD "authorized_keys" "/home/forward/.ssh/"
 
