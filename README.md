@@ -6,9 +6,7 @@ for development, tests and connects to your docker networks.
 ## Build
 
 ```bash
-cp ~/.ssh/authorized_keys ./
-docker build -t forward https://raw.githubusercontent.com/vd2org/ssh-forward/master/Dockerfile
-docker run --network NETWORK --name forward -d -p 33322:22 forward
+docker run --name forwarder -v /root/.ssh/authorized_keys:/home/forward/.ssh/authorized_keys:ro -v /etc/ssh/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key:ro -v /etc/ssh/ssh_host_dsa_key:/etc/ssh/ssh_host_ecdsa_key:ro -v /etc/ssh/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro -p 33322:22 forwarder
 ```
 
 For example, your can make your own **ngrok** or **serveo**. Config your **nginx** or **traefik**
@@ -19,4 +17,3 @@ to frorward connections to container _forward_ and port 8080.
 ```bash
 ssh -o ServerAliveInterval=3 -o ServerAliveCountMax=1 -R 8080:localhost:8080 -p 33322 -N -T forward@HOST
 ```
-
