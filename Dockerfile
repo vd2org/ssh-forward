@@ -27,5 +27,7 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
     rm -rf /usr/bin/ssh-keygen && \
     apk del apk-tools busybox
+    
+EXPOSE 22
 
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
