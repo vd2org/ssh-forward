@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+
+  tpnode:
+    image: ghcr.io/vd2org/ssh-forward:2.0
+    deploy:
+      mode: global
+      update_config:
+        order: stop-first
+      rollback_config:
+        order: stop-first
+    container_name: ssh-forward
+    ports:
+      - target: 22
+        published: 33322
+        protocol: tcp
+        mode: host
+    volumes:
+      - /root/.ssh/authorized_keys:/home/forward/.ssh/authorized_keys:ro
+      - /etc/ssh/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key:ro
+      - /etc/ssh/ssh_host_dsa_key:/etc/ssh/ssh_host_ecdsa_key:ro
+      - /etc/ssh/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro
+    restart: always
