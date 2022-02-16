@@ -1,6 +1,6 @@
-# SSH frowarder service
+# SSH froward service
 
-FROM alpine:3.10
+FROM alpine:3.15
 
 RUN apk update && \
     apk add --no-cache openssh-server && \
@@ -13,7 +13,7 @@ RUN apk update && \
     echo 'ChrootDirectory /none' >> /etc/ssh/sshd_config && \
     echo 'Banner none' >> /etc/ssh/sshd_config && \
     echo 'AllowUsers forward' >> /etc/ssh/sshd_config && \
-    echo 'ForceCommand echo Welcome to forwarder!' >> /etc/ssh/sshd_config && \
+    echo 'ForceCommand echo Welcome to ssh-forward!' >> /etc/ssh/sshd_config && \
     rm /etc/passwd && \
     rm /etc/shadow && \
     echo 'sshd:x:22:22:sshd:/dev/null:/sbin/nologin' >> /etc/passwd && \
