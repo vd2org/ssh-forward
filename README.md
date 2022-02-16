@@ -4,7 +4,7 @@ This is ssh-server docker image only for forwarding ports
 for development, tests and connects to your docker networks.
 
 For example, your can make your own **ngrok** or **serveo**. Config your **nginx** or **traefik**
-to forward connections to container _forward_ and port 8080. 
+to forward connections to container _ssh-forward_ and port 8080. 
 
 ### Supported platforms
 
@@ -32,7 +32,7 @@ curl https://raw.githubusercontent.com/vd2org/ssh-forward/2.0/compose.yml -o com
 docker compose up
 ```
 
-# On client
+### Connecting
 
 ```bash
 ssh -o ServerAliveInterval=3 -o ServerAliveCountMax=1 -R 8080:localhost:8080 -p 33322 -N -T forward@HOST
