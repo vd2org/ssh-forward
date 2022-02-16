@@ -11,6 +11,10 @@ to forward connections to container _forward_ and port 8080.
 * linux/amd64
 * linux/arm64
 
+### Available versions
+
+[Here](https://github.com/users/vd2org/packages/container/package/ssh-forward)
+
 ### Starting with just using docker
 
 ```bash
