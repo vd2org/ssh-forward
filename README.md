@@ -22,7 +22,7 @@ docker run -d --name ssh-forward \
   -v /root/.ssh/authorized_keys:/home/forward/.ssh/authorized_keys:ro \
   -v /etc/ssh/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key:ro \
   -v /etc/ssh/ssh_host_dsa_key:/etc/ssh/ssh_host_ecdsa_key:ro \
-  -v /etc/ssh/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro 
+  -v /etc/ssh/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro \
   -p 33322:22 ghcr.io/vd2org/ssh-forward:2.0
 ```
 ### Starting with using docker compose
