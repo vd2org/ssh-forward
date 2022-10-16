@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
 
-  tpnode:
+  forward:
     image: ghcr.io/vd2org/ssh-forward:2.0
     deploy:
       mode: global
