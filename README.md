@@ -37,3 +37,5 @@ docker compose up
 ```bash
 ssh -o ServerAliveInterval=3 -o ServerAliveCountMax=1 -R 8080:localhost:8080 -p 33322 -N -T forward@HOST
 ```
+
+In this example the local port `8080` will be mapped to `8080` port on the server.
