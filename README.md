@@ -1,7 +1,7 @@
 # Ssh-server 
 
 This is ssh-server docker image only for forwarding ports 
-for development, tests and connects to your docker networks.
+for development, tests and connecting to your docker networks.
 
 For example, your can make your own **ngrok** or **serveo**. Config your **nginx** or **traefik**
 to forward connections to container _ssh-forward_ and port 8080. 
@@ -15,7 +15,7 @@ to forward connections to container _ssh-forward_ and port 8080.
 
 [Here](https://github.com/users/vd2org/packages/container/package/ssh-forward)
 
-### Starting with just using docker
+### Running using just docker
 
 ```bash
 docker run -d --name ssh-forward \
@@ -25,7 +25,7 @@ docker run -d --name ssh-forward \
   -v /etc/ssh/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key:ro \
   -p 33322:22 ghcr.io/vd2org/ssh-forward:2.0
 ```
-### Starting with using docker compose
+### Running using docker compose
 
 ```shell
 curl https://raw.githubusercontent.com/vd2org/ssh-forward/2.0/compose.yml -o compose.yml 
